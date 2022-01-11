@@ -8,7 +8,7 @@ const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
 
   useEffect(() => {
-    const storedUserLoggedInInformation = localStorage.getitem('LOGGED_IN')
+    const storedUserLoggedInInformation = localStorage.getItem('LOGGED_IN')
     
     if (storedUserLoggedInInformation === 'LOGGED_IN'){
       setIsLoggedIn(true)
