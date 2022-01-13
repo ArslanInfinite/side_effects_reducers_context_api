@@ -14,20 +14,14 @@ const Login = (props) => {
     setFormIsValid(
       enteredEmail.includes('@') && enteredPassword.trim().length > 6
     )
-  }, [])
+  }, [enteredEmail, enteredPassword])
 
   const emailChangeHandler = (event) => {
-    setEnteredEmail(event.target.value)
-
-    
+    setEnteredEmail(event.target.value) 
   };
 
   const passwordChangeHandler = (event) => {
     setEnteredPassword(event.target.value)
-
-    setFormIsValid(
-      event.target.value.trim().length > 6 && enteredEmail.includes('@')
-    );
   };
 
   const validateEmailHandler = () => {
