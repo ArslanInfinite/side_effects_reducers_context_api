@@ -20,7 +20,7 @@ const Login = (props) => {
     return () => {
       clearTimeout(identifier)
     }
-    
+
   }, [enteredEmail, enteredPassword])
 
   const emailChangeHandler = (event) => {
@@ -50,7 +50,7 @@ const Login = (props) => {
         <div
           className={`${classes.control} ${
             emailIsValid === false ? classes.invalid : ''
-          }`}
+          }`} 
         >
           <label htmlFor="email">E-Mail</label>
           <input
@@ -68,8 +68,8 @@ const Login = (props) => {
         >
           <label htmlFor="password">Password</label>
           <input
-            type="password"
-            id="password"
+            type = "password"
+            id = "password"
             value={enteredPassword}
             onChange={passwordChangeHandler}
             onBlur={validatePasswordHandler}
