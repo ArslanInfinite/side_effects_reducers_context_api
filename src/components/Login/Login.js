@@ -68,8 +68,8 @@ const Login = (props) => {
         >
           <label htmlFor="password">Password</label>
           <input
-            type = "password"
-            id = "password"
+            type="password"
+            id="password"
             value={enteredPassword}
             onChange={passwordChangeHandler}
             onBlur={validatePasswordHandler}
