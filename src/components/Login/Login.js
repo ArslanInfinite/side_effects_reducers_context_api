@@ -11,8 +11,8 @@ const emailReducer = (state, action) => {
 }
 
 const Login = (props) => {
-  const [enteredEmail, setEnteredEmail] = useState('')
-  const [emailIsValid, setEmailIsValid] = useState()
+  // const [enteredEmail, setEnteredEmail] = useState('')
+  // const [emailIsValid, setEmailIsValid] = useState()
   const [enteredPassword, setEnteredPassword] = useState('')
   const [passwordIsValid, setPasswordIsValid] = useState()
   const [formIsValid, setFormIsValid] = useState(false)
@@ -23,17 +23,25 @@ const Login = (props) => {
   }) 
 
   useEffect(() => {
-    const identifier = setTimeout(() => {
-      setFormIsValid(
-        enteredEmail.includes('@') && enteredPassword.trim().length > 6
-      )
-    }, 500)
+    console.log('EFFECT RUNNING')
 
     return () => {
-      clearTimeout(identifier)
+      console.log('Effect Cleanup')
     }
+  }, [])
 
-  }, [enteredEmail, enteredPassword])
+  // useEffect(() => {
+  //   const identifier = setTimeout(() => {
+  //     setFormIsValid(
+  //       enteredEmail.includes('@') && enteredPassword.trim().length > 6
+  //     )
+  //   }, 500)
+
+  //   return () => {
+  //     clearTimeout(identifier)
+  //   }
+
+  // }, [enteredEmail, enteredPassword])
 
   const emailChangeHandler = (event) => {
     setEnteredEmail(event.target.value) 
