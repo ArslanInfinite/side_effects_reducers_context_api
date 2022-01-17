@@ -3,6 +3,13 @@ import Card from '../UI/Card/Card'
 import classes from './Login.module.css'
 import Button from '../UI/Button/Button'
 
+const emailReducer = (state, action) => {
+  return {
+    value: '', 
+    isValid: false
+  }
+}
+
 const Login = (props) => {
   const [enteredEmail, setEnteredEmail] = useState('')
   const [emailIsValid, setEmailIsValid] = useState()
@@ -10,8 +17,9 @@ const Login = (props) => {
   const [passwordIsValid, setPasswordIsValid] = useState()
   const [formIsValid, setFormIsValid] = useState(false)
 
-  const [emailState, dispatchState] = useReducer(() => {
-    
+  const [emailState, dispatchState] = useReducer(emailReducer, {
+    value: '', 
+    isValid: false
   }) 
 
   useEffect(() => {
@@ -33,6 +41,9 @@ const Login = (props) => {
 
   const passwordChangeHandler = (event) => {
     setEnteredPassword(event.target.value)
+    setFormIsValid(
+      emailState.value.includes('@') && event.target.value.trim().length > 6
+    )
   };
 
   const validateEmailHandler = () => {
