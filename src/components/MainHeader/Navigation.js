@@ -17,7 +17,7 @@ const Navigation = (props) => {
               <a href="/">Admin</a>
             </li>
           )}
-          {props.isLoggedIn && (
+          {contextData.isLoggedIn && (
             <li>
               <button onClick={props.onLogout}>Logout</button>
             </li>
