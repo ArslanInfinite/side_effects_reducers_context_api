@@ -7,7 +7,7 @@ const Navigation = (props) => {
       {contextData => {
         return <nav className={classes.nav}>
         <ul>
-          {props.isLoggedIn && (
+          {contextData.isLoggedIn && (
             <li>
               <a href="/">Users</a>
             </li>
