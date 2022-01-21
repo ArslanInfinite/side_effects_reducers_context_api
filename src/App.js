@@ -17,12 +17,10 @@ const App = () => {
   }, [])
 
   const loginHandler = (email, password) => {
-    localStorage.setItem('isLoggedIn', 'LOGGED_IN')
     setIsLoggedIn(true)
   }
 
   const logoutHandler = () => {
-    localStorage.removeItem('isLoggedIn')
     setIsLoggedIn(false)
   }
 
