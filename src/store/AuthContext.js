@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const AuthContext = React.createContext({
   isLoggedIn: false,
@@ -8,6 +8,14 @@ const AuthContext = React.createContext({
 
 export const AuthContextProvider = props => {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+
+  useEffect(() => {
+    const storedUserLoggedInInformation = localStorage.getItem('LOGGED_IN')
+    
+    if (storedUserLoggedInInformation === 'LOGGED_IN'){
+      setIsLoggedIn(true)
+    }
+  }, [])
 
   const loginHandler = () => {
     localStorage.setItem('isLoggedIn', 'LOGGED_IN')

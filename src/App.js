@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 import Login from './components/Login/Login'
 import Home from './components/Home/Home'
@@ -7,14 +7,6 @@ import AuthContext from './store/AuthContext'
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
-
-  useEffect(() => {
-    const storedUserLoggedInInformation = localStorage.getItem('LOGGED_IN')
-    
-    if (storedUserLoggedInInformation === 'LOGGED_IN'){
-      setIsLoggedIn(true)
-    }
-  }, [])
 
   const loginHandler = (email, password) => {
     setIsLoggedIn(true)
