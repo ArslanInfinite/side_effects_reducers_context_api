@@ -12,8 +12,8 @@ const Input = props => {
         type={props.value}
         id={props.id}
         value={props.value}
-        onChange={emailChangeHandler}
-        onBlur={validateEmailHandler}
+        onChange={props.onChange}
+        onBlur={props.onBlur}
       />
     </div>
   )
