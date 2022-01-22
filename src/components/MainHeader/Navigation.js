@@ -20,7 +20,7 @@ const Navigation = ()=> {
           )}
           {contextData.isLoggedIn && (
             <li>
-              <button onClick={contextData.onLogOut}>Logout</button>
+              <button onClick={contextData.onLogout}>Logout</button>
             </li>
           )}
         </ul>
